@@ -1,13 +1,13 @@
-#$ErrorActionPreference = "Stop"
+$ErrorActionPreference = "Stop"
 
 $ExitCode = 0
 
 # Must be run with local admin right
-<#$id = [System.Security.Principal.WindowsIdentity]::GetCurrent()
+$id = [System.Security.Principal.WindowsIdentity]::GetCurrent()
 $p = New-Object System.Security.Principal.WindowsPrincipal($id)
 if (!$p.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)) {
     Throw 'This script requires admin rights.'
-}#>
+}
 
 try {
     # Silent uninstall for Logitech Sync
@@ -40,12 +40,11 @@ finally {
 }
 
 Exit $ExitCode
-
 # SIG # Begin signature block
 # MIIsTwYJKoZIhvcNAQcCoIIsQDCCLDwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU4D0aWRVpKfH4auBOEDrPDkQg
-# HheggiaTMIIFjTCCBHWgAwIBAgIQDpsYjvnQLefv21DiCEAYWjANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUe4h+i8MkoioAq82iqUyVh3IA
+# vlyggiaTMIIFjTCCBHWgAwIBAgIQDpsYjvnQLefv21DiCEAYWjANBgkqhkiG9w0B
 # AQwFADBlMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYD
 # VQQLExB3d3cuZGlnaWNlcnQuY29tMSQwIgYDVQQDExtEaWdpQ2VydCBBc3N1cmVk
 # IElEIFJvb3QgQ0EwHhcNMjIwODAxMDAwMDAwWhcNMzExMTA5MjM1OTU5WjBiMQsw
@@ -255,28 +254,28 @@ Exit $ExitCode
 # ZW8xHjAcBgNVBAMTFU5BViBJc3N1aW5nIENBIEludGVybgITbgA6MTnUn5Mnf2wC
 # hQABADoxOTAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZ
 # BgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYB
-# BAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUMUj29d4Okgkdfve61AvoZ9+ioWQwDQYJ
-# KoZIhvcNAQEBBQAEggEAH9W0pip7tLX/sm0jER9Sdmmgpp5Er2ISIVl46sYimFvA
-# 5hYc9eHh2YSJ2mKwqawm1mYgWxUiageOQSiG+bMLGC1/bVUh3cGH0+9EqiTtEs0Q
-# yRfNF6ORISeBaU/wy5Puqf+J+fqnmciHuRSlho1cLI0Pw/G8P9GfKEBXR1kpEhf7
-# yVVkm87g7sbRBAtYeYDVuxi9yF4ChhxiM49Rjl7FusFqcCKb5up11WlTdF8B42uf
-# ekfd8hUf3RwJUu+atBGfLVW1b1RttiCDBFvp4LbyKYrzeVrfhbktmVdjusZeTuIj
-# UxulmGIfUBjxEbPR95Sfp2Mgh/kmj9ELzP9VOMFUJ6GCAyAwggMcBgkqhkiG9w0B
+# BAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUMGV27OZYzXJ/1Leqwjfagi05uLgwDQYJ
+# KoZIhvcNAQEBBQAEggEANAdbiwvWeyrbnpFUWWd05v6ZEtpsUFWlZvhJQB0RYfzB
+# 1Iwodir2SiULB6yPLiIu1GjIiEuGZli+J8rZposIQhLLsY1rlgZ04oZfv+v9E2t5
+# 4wDOLeiftpyaDxx6p/6iV4/Sj6Ff8WDAV8xpdBXfKMobyDyK102cPZe3qfyCJ1YZ
+# Fpfw3Ge/ZjxJ6ViJZU87ywY6WhSk+dLcowmE5whKtKyM6e+XuvB0dMP4CSHGYa9s
+# 1x0to1ftqjDDtt9kPKpXh1/1n4ybeFMG1pGhwpDMPdA6wRyQVLePx+ClEBZ0njGR
+# ZndfF3D+RIPSHzYFbkqMDPfivOxtCfH5cHW247Flg6GCAyAwggMcBgkqhkiG9w0B
 # CQYxggMNMIIDCQIBATB3MGMxCzAJBgNVBAYTAlVTMRcwFQYDVQQKEw5EaWdpQ2Vy
 # dCwgSW5jLjE7MDkGA1UEAxMyRGlnaUNlcnQgVHJ1c3RlZCBHNCBSU0E0MDk2IFNI
 # QTI1NiBUaW1lU3RhbXBpbmcgQ0ECEAp6SoieyZlCkAZjOE2Gl50wDQYJYIZIAWUD
 # BAIBBQCgaTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEP
-# Fw0yMjA4MzAwNTE5NDdaMC8GCSqGSIb3DQEJBDEiBCBx5UHQrU5jF4Bj00gkhNp2
-# kmgAoH4pe9nbdImXcvdbOjANBgkqhkiG9w0BAQEFAASCAgCPilQUyxpapEnvvGlZ
-# wb/sgXV+JdcOeFmqlF8oBdks4KYIxn2y1RHKIk3uKKp18PCmwqCW3aryplQicBh/
-# 885obecJk0RyH1CKPCL/fm8D725CFZUggURndw+yBI2B/HW6VvzQVXI46Pc06FH0
-# no59y3+qNeUlVnoakCRfZaMPTZxbAWF5A5nEv9O9naUqm/wlmOZztePJuuRUcdbP
-# Te+0FYiiybhMcNY9YgA4EeFNd+goxmziHZHfagc63CFekEYNULjnwW5R4kAX9m4I
-# lxLQUE4MBdbfMpH1z+qcw9l5fbPXKolyTZQLz/AozutVADRtkgcnrfTBeZsi788A
-# Drt08h/a7y+0V2YAT38qOC4RzJoDzplDHtYLWy6nLhj9ZKcIlivq5H5zFFYKjqow
-# fyKd/9sK+MOfoEUMoT/RTDLX0Hvr2JlqnTGBNKTaGSXqJkP94k097CdP5zgDjQDJ
-# QQjQYOnj7cJZYHzBylz+q+RnE1U7IvVDA81yRCq3QWMPuk9XWoSoGu3JImRACoXd
-# aTpLhmC0bEgA1DZNYD2gW/rtbv9mN/atCifC4kVHjbfP5gMaU20ZtOs/wquFs++B
-# IEJOdS7U1+Pa0njZmn/WUq2cI+mxyI2/CKyODWl0tGikiFEjKPU67rxKUJ/aODG4
-# TjGkMuBOupRM+E9TPbN11mOERg==
+# Fw0yMjA4MjYwNzI0MjdaMC8GCSqGSIb3DQEJBDEiBCAuXiJsB6eQU6mx04WLmjVx
+# eJ2AGDR9puTCD8agmZ+/lDANBgkqhkiG9w0BAQEFAASCAgAtwten6Es6+CjVDFU4
+# wuLyAJD7g5UIpaIw+Fx6IDFQHY4GGe0ZHzG5ljyZD7kCkbUMAZkRzOXRay1M4IRp
+# C0dBGVU3wjvUarbsJ7WJQ9JifPN9jcmvPH6k9jvYgy28n0P/I/Jjdk0rq4AP3NU5
+# U7/ORGknm3mowVtDELTU4C3KARqDTAujPZ1HPnJbDgxKSyLe/grLbGYhmX1sTt3z
+# pvoerATwEpaVux+QJtymJpnniV5xpxfQJUZ7pyeu6Wc5pxphqrZaTZd+GfVKSRum
+# 3N5PL7Hi35UX9NN1Gf+cVCQQVkuZ/17xigiuSN/GGbWv6e6pr3CvFz/b9isGQtI0
+# DWlGCHd0QxJYOwzFe3h7ivGGJ1AYfhyL1+JrApi8jev+wprmdGRN2hNMIX3OlgrZ
+# WO18ZpF/OVxTV9ehMaAYc5DwCl+x8BnNwZTcdYgJWgxRu9mneX+tZ8QQwrCXCDwd
+# p+oMFUaxpwtmxbh2JAf+ishSaavGxtk3AA8nzJwMAGLfSgj2khgt7i63BKeUS/vl
+# WSrRjNKgc9RtJirPZm3AM6TICFgc+ejvtFlOeYrgVugoR39sAcSA5X3stmKPq52K
+# +YKGMW8NGFhBBYMW59TlX8lZfDy/AB7QSn4WmX/jALL8VcNH0e/5RySE1Lq62pcL
+# KKJ8FPFranlTHeJmCLOoz9fVTA==
 # SIG # End signature block
